@@ -4,11 +4,13 @@ interface Props {
     title: String;
     description: String;
     icon: String;
+    selected: boolean;
+    onClick: ()=> void;
 }
 
-export function SelectOption({ title, description, icon  }: Props) {
+export function SelectOption({ title, description, icon, selected, onClick }: Props) {
     return(
-        <C.Container>
+        <C.Container onClick={onClick} selected={selected}>
             <C.Icon>{ icon }</C.Icon>
             <C.Info>
                 <C.Title>{ title }</C.Title>
